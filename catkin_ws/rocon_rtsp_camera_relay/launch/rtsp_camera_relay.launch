@@ -1,0 +1,10 @@
+<launch>
+  <arg name="video_stream_url" default="$(env ROCON_RTSP_CAMERA_RELAY_URL)"/>
+  <node pkg="rocon_rtsp_camera_relay" name="rtsp_camera_relay" type="rocon_rtsp_camera_relay_node">
+    <param name="video_stream_url" value="$(arg video_stream_url)"/>
+    <param name="camera_frame_id" value="rtsp_camera_link" />
+    <param name="camera_info_url" value="file:///home/divserge/catkin_ws/calibration/rtsp_nodistortion.yaml"/>
+	<param name="camera_name" value="rtsp_camera_relay"/>
+  </node>
+
+</launch>
